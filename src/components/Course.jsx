@@ -137,7 +137,7 @@ export default function Course() {
                 </h2>
                 <div className="mt-4 space-y-3">
                   {mod.topics.map((topic, idx) => (
-                    <div key={idx}>
+                    <div key={idx} className=" pl-4">
                       <h3 className="text-lg font-dikhaod">{topic.name}</h3>
                       <p className="text-gray-300">
                         <strong>Definition:</strong> {topic.definition}

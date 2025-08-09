@@ -57,7 +57,7 @@ function lexer(input) {
         word += char;
         char = input[++current];
       }
-      const keywords = ["banao", "dikhao", "yadi", "nahito", "jabtak", "kaam"];
+      const keywords = ["banao", "dikhao", "yadi", "nahito", "jabtak", "kaam", "vapas"];
       tokens.push({
         type: keywords.includes(word) ? "keyword" : "identifier",
         value: word,
@@ -122,6 +122,15 @@ function parser(tokens) {
       }
       if (tokens[0]?.value === ";") tokens.shift();
       return { type: "Print", expression: expression.trim() };
+    }
+
+    if (token?.type === "keyword" && token.value === "vapas") {
+      let expression = "";
+      while (tokens[0]?.value !== ";") {
+        expression += parseTokenValue(tokens.shift());
+      }
+      if (tokens[0]?.value === ";") tokens.shift();
+      return { type: "Return", expression: expression.trim() };
     }
 
     if (token?.type === "keyword" && token.value === "yadi") {
@@ -250,6 +259,8 @@ function codeGenerator(node) {
       return `let ${node.name} = ${node.value};`;
     case "Print":
       return `console.log(${node.expression});`;
+    case "Return":
+      return `return ${node.expression};`;
     case "IfElse":
       return `if (${node.condition}) {\n${node.thenBlock
         .map(codeGenerator)
