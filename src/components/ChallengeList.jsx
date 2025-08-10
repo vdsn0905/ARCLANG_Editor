@@ -12,7 +12,7 @@ export default function ChallengeList() {
   const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowSplash(false), 2000);
+    const timer = setTimeout(() => setShowSplash(false), 2500);
     return () => clearTimeout(timer);
   }, []);
   return (
@@ -44,4 +44,5 @@ export default function ChallengeList() {
     </div>
   );
 }
+
 
