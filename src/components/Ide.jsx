@@ -14,7 +14,7 @@ export default function Ide() {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowSplash(false), 2000);
+    const timer = setTimeout(() => setShowSplash(false), 2500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -84,3 +84,4 @@ export default function Ide() {
     </div>
   );
 }
+
