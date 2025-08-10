@@ -21,7 +21,7 @@ export default function SolveChallenge() {
   const [solved, setSolved] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowSplash(false), 2000);
+    const timer = setTimeout(() => setShowSplash(false), 2500);
     return () => clearTimeout(timer);
   }, []);
   const run = () => {
@@ -116,3 +116,4 @@ export default function SolveChallenge() {
     </div>
   );
 }
+
