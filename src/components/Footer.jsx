@@ -91,10 +91,11 @@ export default function Footer() {
           )}
 
           <div className="text-sm text-gray-400 mt-6">
-            © {new Date().getFullYear()} ARCLANG Editor. All rights reserved.
+            © {new Date().getFullYear()} LangForage Editor. All rights reserved.
           </div>
         </div>
       </div>
     </div>
   );
 }
+
