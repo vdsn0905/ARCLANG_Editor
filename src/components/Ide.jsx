@@ -42,7 +42,7 @@ export default function Ide() {
       {!showSplash && (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-6 font-mono text-white">
           <h2 className="text-3xl font-bold mb-6 text-blue-400">
-            ARCLANG Editor
+            LangForage Editor
           </h2>
 
           <p className="mb-4 text-white">
@@ -84,4 +84,5 @@ export default function Ide() {
     </div>
   );
 }
+
 
